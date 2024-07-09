@@ -61,7 +61,7 @@ public class CheckRunner {
                         args[args.length-2].matches("pathToFile=\\..+") &&
                         args[args.length-1].matches("saveToFile=\\..+") &&
                         args[args.length-4].matches("discountCard=[0-9]{4}") &&
-                        args[args.length-3].matches("balanceDebitCard=[0-9]+")){
+                        args[args.length-3].matches("balanceDebitCard=-?[0-9]+")){
             discountCard = getCard(cardTable, args[args.length - 4]);
             debitCardValue = Integer.parseInt(args[args.length-3].split("=")[1]);
             debitCard = DebitCard.getDebitCard(debitCardValue);
@@ -75,7 +75,7 @@ public class CheckRunner {
                 args.length >= 3 &&
                         checkProductArgs(args, 0, args.length-5, "[0-9]+-[0-9]+") &&
                         args[args.length-2].matches("discountCard=[0-9]{4}") &&
-                        args[args.length-1].matches("balanceDebitCard=[0-9]+")
+                        args[args.length-1].matches("balanceDebitCard=-?[0-9]+")
         ) {
             discountCard = getCard(cardTable, args[args.length-2]);
             debitCardValue = Integer.parseInt(args[args.length-1].split("=")[1]);
